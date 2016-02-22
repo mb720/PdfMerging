@@ -1,0 +1,27 @@
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+mainClassName = "eu.matthiasbraun.pdftests.PdfTests"
+version = "0.1"
+
+sourceCompatibility = 1.8
+
+group = "eu.matthiasbraun.pdftests"
+
+repositories {
+    mavenCentral()
+}
+
+task wrapper(type: Wrapper) {
+    description = "Generates gradlew(.bat) scripts. Run this to upgrade Gradle"
+    gradleVersion = "2.9"
+
+}
+dependencies {
+    compile "org.slf4j:slf4j-api:1.7.13"
+    compile "org.slf4j:slf4j-jdk14:1.7.13"
+    compile "org.apache.pdfbox:pdfbox:2.0.0-RC3"
+}
